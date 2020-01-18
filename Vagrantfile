@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "scripts/provision-vagrant.sh"
   config.vm.provision :shell, path: "scripts/provision-vagrant-user.sh", privileged: false
 
+  # Setting shared directory point
+
   # Welcome message
   config.vm.post_up_message = "*****************************************\n\n" \
                               "    Welcome to your data science box!\n\n"  \

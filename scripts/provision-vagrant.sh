@@ -14,6 +14,8 @@ ln -s /vagrant/ /home/vagrant/data
 chown vagrant.vagrant /home/vagrant/data
 
 echo "Setup Jupyter auto start"
+#anaconda3-2019.07
+#ExecStart=/home/vagrant/.pyenv/versions/anaconda3-5.1.0/bin/jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --NotebookApp.token= --notebook-dir=/home/vagrant/
 cat >/etc/systemd/system/jupyter.service <<EOL
 [Unit]
 Description=Jupyter Workplace
@@ -21,7 +23,7 @@ Description=Jupyter Workplace
 [Service]
 Type=simple
 PIDFile=/run/jupyter.pid
-ExecStart=/home/vagrant/.pyenv/versions/anaconda3-5.1.0/bin/jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --NotebookApp.token= --notebook-dir=/home/vagrant/data
+ExecStart=/home/vagrant/.pyenv/versions/anaconda3-2019.07/bin/jupyter lab --port=8888 --no-browser --ip=0.0.0.0 --NotebookApp.token= --notebook-dir=/home/vagrant/data
 User=vagrant
 Group=vagrant
 WorkingDirectory=/home/vagrant/data

@@ -10,12 +10,14 @@ curl -s -S -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/
 source ~/.bash_profile
 
 echo "Install Python (Anaconda with Python 3)"
-pyenv install anaconda3-5.1.0
+#pyenv install anaconda3-5.1.0
+pyenv install anaconda3-2019.07
 
 echo "Activate Python"
-cd /home/vagrant/data
-pyenv local anaconda3-5.1.0
+cd /home/vagrant/workdir
+#pyenv local anaconda3-5.1.0
+pyenv local anaconda3-2019.07
 
 echo "Setup login directory"
-echo "cd /home/vagrant/data/"  >> /home/vagrant/.bash_profile
+echo "cd /home/vagrant/workdir/"  >> /home/vagrant/.bash_profile
 echo "source ~/.bashrc"  >> /home/vagrant/.bash_profile
